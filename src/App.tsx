@@ -7,14 +7,16 @@ function App() {
     <div className="App">
       <h1>Madouss Player</h1>
       <p>Custom video player</p>
-      <Video
+      <div className="player-wrapper">
+        <Video
         src="/nature.mp4"
         controls={true}
         width={800}
         height={450}
         poster="/nature-image.png"
         />
-        
+      </div>
+       
     </div>
   );
 }
