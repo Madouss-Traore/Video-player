@@ -18,7 +18,6 @@ function VideoPlayer({
   return (
     <div className="player-wrapper">
       <h2>{title}</h2>
-
       <Video
         src={src}
         controls={true}
