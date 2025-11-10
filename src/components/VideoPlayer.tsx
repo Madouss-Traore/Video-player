@@ -19,6 +19,7 @@ function VideoPlayer({
     <div className="player-wrapper">
       <h2>{title}</h2>
       <Video
+        key={src}                
         src={src}
         controls={true}
         width={width}
