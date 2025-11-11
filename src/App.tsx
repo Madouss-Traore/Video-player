@@ -38,7 +38,7 @@ function App() {
                   }
                   onClick={() => setActiveVideo(video)}
                 >
-                  {video.poster && (
+                  { video.poster && (
                     <img
                       src={video.poster}
                       alt={video.title || "Miniature"}
