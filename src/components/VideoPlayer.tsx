@@ -1,4 +1,4 @@
-import { Video } from "reactjs-media";
+import { useEffect, useRef } from "react";
 
 interface VideoPlayerProps {
   src: string;
@@ -10,22 +10,39 @@ interface VideoPlayerProps {
 
 function VideoPlayer({
   src,
-  poster = "https://placehold.co/800x450/000000/FFFFFF?text=Madouss+Player",
+  poster,
   title = "Now Playing",
   width = 800,
   height = 450,
 }: VideoPlayerProps) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  //relance de la video au changement de la src 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    
+    video.currentTime = 0;
+
+    // tentative d'autoplay
+    video.play().catch(() => {
+    });
+  }, [src]);
+
+  // rendu
   return (
     <div className="player-wrapper">
-      <h2>{title}</h2>
-      <Video
-        key={src}                
+      
+      <video
+        ref={videoRef}
         src={src}
-        controls={true}
+        poster={poster}
         width={width}
         height={height}
-        poster={poster}
+        controls  
       />
+      <h2>{title}</h2>
     </div>
   );
 }
