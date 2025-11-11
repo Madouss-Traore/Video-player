@@ -1,44 +1,72 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 .App {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
 }
 
-/* .player-wrapper {
-  width: 100%;
-  max-width: 800px;
-} */
+
+.title {
+  text-align: left;
+  background-color: #000000;
+  margin-bottom: 32px;
+  position: sticky;
+  top: 0;        
+  z-index: 10;  
+  margin-bottom: 26px;   
+}
 
 /* //////// MAIN LAYOUT //////// */
-.main-layout{
-  display:flex;
+
+.main-layout {
+  display: flex;
   align-items: flex-start;
-  gap:16px;
+  gap: 16px;
 }
 
-/* //////// MAIN VIDEO //////// */
-.main-video{
-  flex:3;
+/* //////// VIDEO //////// */
+
+.main-video {
+  flex: 3;
+}
+
+.video-element {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+  background: #000;
+  margin-bottom: 8px;
 }
 
 /* //////// SIDEBAR //////// */
-.sidebar{
-  flex:1.3;
+
+.sidebar {
+  flex: 1.3;
 }
 
-/* //////// VIDEOS //////// */
+.sidebar h3 {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* //////// VIDEOS LIST //////// */
 
 .video-list {
   padding: 0;
@@ -55,15 +83,16 @@
   transition: background-color 0.2s ease;
   border-radius: 8px;
   padding: 4px;
+  background-color: #111111;
 }
 
 .video-item:hover {
-  background: #000222;
+  background: #1a1a1a;
 }
 
 .video-item.active {
-  background: #333;
-  border-left: 3px solid#cc0d00;
+  background: #192331;
+  border-left: 2px solid #B22222; 
 }
 
 .video-thumb {
@@ -73,11 +102,32 @@
   border-radius: 6px;
 }
 
-.play-icon{
+.play-icon {
   color: #ffffff;
-  margin: 0 6px ;
+  margin-right: 6px;
   font-size: 12px;
 }
 
+/* //////// RESPONSIVE //////// */
 
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .main-video,
+  .sidebar {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .sidebar {
+    margin-top: 16px;
+  }
+
+  .video-thumb {
+    width: 110px;
+    height: 62px;
+  }
+}

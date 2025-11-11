@@ -7,7 +7,7 @@ function App() {
   const [activeVideo, setActiveVideo] = useState<VideoItem>(videoList[0]);
   return (
     <div className="App">
-      <h1>Madouss Player</h1>
+      <h1 className="title"> MP.</h1>
       <div className="main-layout">
         
         {/* Main player */}
@@ -16,8 +16,6 @@ function App() {
             src={activeVideo.src}
             title={activeVideo.title}
             poster={activeVideo.poster}
-            width={activeVideo.width}
-            height={activeVideo.height}
           />
         </div>
 
