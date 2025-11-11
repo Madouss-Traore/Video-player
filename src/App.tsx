@@ -27,7 +27,7 @@ function App() {
           <ul className="video-list">
             {videoList
               // on ne garde que les vidéos qui ont un id différent de la vidéo active
-              .filter((video) => video.id !== activeVideo.id) 
+              // .filter((video) => video.id !== activeVideo.id) 
               .map((video) => (
                 <li
                   key={video.id}
@@ -38,6 +38,8 @@ function App() {
                   }
                   onClick={() => setActiveVideo(video)}
                 >
+                  {video.id === activeVideo.id && <span className="play-icon">▶</span>}
+                  
                   { video.poster && (
                     <img
                       src={video.poster}
