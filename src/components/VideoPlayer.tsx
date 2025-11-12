@@ -32,6 +32,9 @@ function VideoPlayer({
         src={src}
         poster={poster}
         controls
+        muted
+        playsInline
+        autoPlay
         className="video-element" 
       />
       <h2>{title}</h2>
